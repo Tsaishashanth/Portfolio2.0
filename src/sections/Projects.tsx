@@ -1,4 +1,10 @@
-﻿const experience = [
+﻿type ThemeMode = "dark" | "light";
+
+interface ProjectsProps {
+  theme: ThemeMode;
+}
+
+const experience = [
   {
     title: "Infrastructure Engineer",
     company: "Cyphers",
@@ -37,30 +43,41 @@
   },
 ];
 
-export default function Projects() {
+export default function Projects({ theme }: ProjectsProps) {
+  const isDark = theme === "dark";
+  const panelClasses = isDark
+    ? "border-slate-800 bg-slate-900/95 shadow-[0_20px_60px_rgba(0,0,0,0.45)]"
+    : "border-slate-200 bg-white shadow-[0_20px_60px_rgba(15,23,42,0.08)]";
+  const softPanelClasses = isDark
+    ? "border-slate-800 bg-slate-950"
+    : "border-slate-200 bg-slate-50";
+  const textMuted = isDark ? "text-slate-500" : "text-slate-600";
+  const textStrong = isDark ? "text-slate-100" : "text-slate-900";
+  const textBody = isDark ? "text-slate-300" : "text-slate-700";
+
   return (
-    <section id="experience" className="bg-slate-950 py-20 sm:py-24">
+    <section id="experience" className={isDark ? "bg-slate-950 py-20 sm:py-24" : "bg-slate-100 py-20 sm:py-24"}>
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="mb-10 flex flex-col gap-3">
-          <p className="text-sm font-semibold uppercase tracking-[0.35em] text-slate-500">Experience</p>
-          <h2 className="text-3xl font-semibold tracking-tight text-slate-100 sm:text-4xl">Experience</h2>
+          <p className={`text-sm font-semibold uppercase tracking-[0.35em] ${textMuted}`}>Experience</p>
+          <h2 className={`text-3xl font-semibold tracking-tight sm:text-4xl ${textStrong}`}>Experience</h2>
         </div>
 
         <div className="space-y-6">
           {experience.map((item) => (
-            <article key={item.title} className="overflow-hidden rounded-[32px] border border-slate-800 bg-slate-900/95 p-6 shadow-[0_20px_60px_rgba(0,0,0,0.45)] sm:p-8">
+            <article key={item.title} className={`overflow-hidden rounded-[32px] border p-6 shadow-[0_20px_60px_rgba(0,0,0,0.45)] sm:p-8 ${panelClasses}`}>
               <div className="flex flex-wrap items-start justify-between gap-4">
                 <div>
-                  <h3 className="text-xl font-semibold tracking-tight text-slate-100">{item.title}</h3>
-                  <p className="mt-1 text-sm text-slate-500">{item.company}</p>
+                  <h3 className={`text-xl font-semibold tracking-tight ${textStrong}`}>{item.title}</h3>
+                  <p className={`mt-1 text-sm ${textMuted}`}>{item.company}</p>
                 </div>
-                <div className="space-y-1 rounded-3xl border border-slate-800 bg-slate-950 px-4 py-3 text-sm text-slate-400">
+                <div className={`space-y-1 rounded-3xl border px-4 py-3 text-sm ${softPanelClasses} ${isDark ? "text-slate-400" : "text-slate-600"}`}>
                   <p>{item.period}</p>
                   <p>{item.location}</p>
                 </div>
               </div>
 
-              <ul className="mt-6 space-y-3 text-sm leading-7 text-slate-300">
+              <ul className={`mt-6 space-y-3 text-sm leading-7 ${textBody}`}>
                 {item.bullets.map((bullet) => (
                   <li key={bullet} className="flex gap-3">
                     <span className="mt-2 h-2 w-2 rounded-full bg-cyan-400" />
@@ -71,7 +88,7 @@ export default function Projects() {
 
               <div className="mt-6 flex flex-wrap gap-2">
                 {item.stack.map((tech) => (
-                  <span key={tech} className="rounded-full border border-slate-800 bg-slate-950 px-3 py-1 text-sm text-slate-400">
+                  <span key={tech} className={`rounded-full border px-3 py-1 text-sm ${softPanelClasses} ${isDark ? "text-slate-400" : "text-slate-600"}`}>
                     {tech}
                   </span>
                 ))}
