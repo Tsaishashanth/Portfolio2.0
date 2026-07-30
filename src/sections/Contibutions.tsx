@@ -6,50 +6,9 @@ interface ContributionsProps {
   theme: ThemeMode;
 }
 
-const projects = [
-  {
-    title: "Autopsy",
-    subtitle: "Web3",
-    description: "Solana transaction forensics and on-chain risk scoring engine.",
-    status: "Live",
-  },
-  {
-    title: "Semora",
-    subtitle: "Coming Soon",
-    description: "Semantic diff tool for Anchor/Solana programs.",
-    status: "Soon",
-  },
-  {
-    title: "Athena",
-    subtitle: "Coming Soon",
-    description: "In-app Solana wallet and SPL token minter with no extension.",
-    status: "Soon",
-  },
-  {
-    title: "Glyphcast",
-    subtitle: "Featured",
-    description: "Browser-based ASCII art studio for images, GIFs, and video.",
-    status: "Live",
-  },
-];
+const projects = [];
 
-const posts = [
-  {
-    title: "How Solana Validators Work",
-    date: "Jul 14, 2026",
-    excerpt: "A conceptual introduction to what a validator does and how it fits into Solana's proof-of-stake protocol.",
-  },
-  {
-    title: "Building a Frontend for a Solana Program on Devnet",
-    date: "Jun 10, 2026",
-    excerpt: "Connecting a Next.js frontend to a deployed Solana program on devnet: wallets, RPC, and on-chain instructions.",
-  },
-  {
-    title: "Eraser & Selection Mechanics in CoSketch",
-    date: "May 01, 2026",
-    excerpt: "How CoSketch handles erasing and selecting shapes in its canvas engine and collaboration model.",
-  },
-];
+const posts = [];
 
 export default function Contributions({ theme }: ContributionsProps) {
   const isDark = theme === "dark";
@@ -78,19 +37,26 @@ export default function Contributions({ theme }: ContributionsProps) {
           </div>
 
           <div className="grid gap-5 lg:grid-cols-2">
-            {projects.map((project) => (
-              <article key={project.title} className={`overflow-hidden rounded-[32px] border shadow-[0_20px_60px_rgba(0,0,0,0.5)] ${panelClasses}`}>
-                <div className={`h-48 p-6 ${softPanelClasses}`}>
-                  <p className={`rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-[0.35em] ${isDark ? "bg-slate-800 text-slate-400" : "bg-slate-200 text-slate-600"}`}>{project.subtitle}</p>
-                  <h3 className={`mt-5 text-xl font-semibold ${strongText}`}>{project.title}</h3>
-                  <p className={`mt-3 text-sm leading-7 ${bodyText}`}>{project.description}</p>
-                </div>
-                <div className={`flex items-center justify-between border-t px-6 py-4 ${isDark ? "border-slate-800" : "border-slate-200"}`}>
-                  <span className={`text-sm font-semibold ${strongText}`}>{project.status}</span>
-                  <span className={`text-sm ${mutedText}`}>View project</span>
-                </div>
-              </article>
-            ))}
+            {projects.length > 0 ? (
+              projects.map((project) => (
+                <article key={project.title} className={`overflow-hidden rounded-[32px] border shadow-[0_20px_60px_rgba(0,0,0,0.5)] ${panelClasses}`}>
+                  <div className={`h-48 p-6 ${softPanelClasses}`}>
+                    <p className={`rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-[0.35em] ${isDark ? "bg-slate-800 text-slate-400" : "bg-slate-200 text-slate-600"}`}>{project.subtitle}</p>
+                    <h3 className={`mt-5 text-xl font-semibold ${strongText}`}>{project.title}</h3>
+                    <p className={`mt-3 text-sm leading-7 ${bodyText}`}>{project.description}</p>
+                  </div>
+                  <div className={`flex items-center justify-between border-t px-6 py-4 ${isDark ? "border-slate-800" : "border-slate-200"}`}>
+                    <span className={`text-sm font-semibold ${strongText}`}>{project.status}</span>
+                    <span className={`text-sm ${mutedText}`}>View project</span>
+                  </div>
+                </article>
+              ))
+            ) : (
+              <div className={`rounded-[32px] border p-10 text-center ${panelClasses}`}>
+                <p className={`text-lg font-semibold ${strongText}`}>No projects available yet.</p>
+                <p className={`mt-3 text-sm leading-7 ${bodyText}`}>This section will be updated when new projects are ready to share.</p>
+              </div>
+            )}
           </div>
         </section>
 
@@ -106,15 +72,22 @@ export default function Contributions({ theme }: ContributionsProps) {
           </div>
 
           <div className="grid gap-5 lg:grid-cols-3">
-            {posts.map((post) => (
-              <article key={post.title} className={`rounded-[28px] border p-6 shadow-[0_20px_60px_rgba(0,0,0,0.45)] ${panelClasses}`}>
-                <div className="flex flex-wrap items-center justify-between gap-4">
-                  <h3 className={`text-lg font-semibold ${strongText}`}>{post.title}</h3>
-                  <span className={`text-sm ${mutedText}`}>{post.date}</span>
-                </div>
-                <p className={`mt-4 text-sm leading-7 ${bodyText}`}>{post.excerpt}</p>
-              </article>
-            ))}
+            {posts.length > 0 ? (
+              posts.map((post) => (
+                <article key={post.title} className={`rounded-[28px] border p-6 shadow-[0_20px_60px_rgba(0,0,0,0.45)] ${panelClasses}`}>
+                  <div className="flex flex-wrap items-center justify-between gap-4">
+                    <h3 className={`text-lg font-semibold ${strongText}`}>{post.title}</h3>
+                    <span className={`text-sm ${mutedText}`}>{post.date}</span>
+                  </div>
+                  <p className={`mt-4 text-sm leading-7 ${bodyText}`}>{post.excerpt}</p>
+                </article>
+              ))
+            ) : (
+              <div className={`rounded-[32px] border p-10 text-center ${panelClasses}`}>
+                <p className={`text-lg font-semibold ${strongText}`}>No blog posts published yet.</p>
+                <p className={`mt-3 text-sm leading-7 ${bodyText}`}>Check back soon for new writing and technical insights.</p>
+              </div>
+            )}
           </div>
         </section>
 
@@ -142,7 +115,7 @@ export default function Contributions({ theme }: ContributionsProps) {
         </section>
 
         <footer className={`flex flex-col gap-4 border-t pt-6 text-sm sm:flex-row sm:items-center sm:justify-between ${isDark ? "border-slate-800 text-slate-500" : "border-slate-200 text-slate-600"}`}>
-          <p>Built by Shashanth · All rights reserved.</p>
+          <p>Built by Tarigopula Sai Shashanth · All rights reserved.</p>
           <div className="flex flex-wrap gap-4">
             <a href="https://github.com" className={`transition ${isDark ? "hover:text-slate-100" : "hover:text-slate-900"}`}>GitHub</a>
             <a href="https://linkedin.com" className={`transition ${isDark ? "hover:text-slate-100" : "hover:text-slate-900"}`}>LinkedIn</a>
