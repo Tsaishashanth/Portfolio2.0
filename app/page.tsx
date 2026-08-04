@@ -1,5 +1,6 @@
 ﻿import CoverImage from "@/src/components/CoverImage";
 import Profile from "@/src/components/Profile";
+import NavigationTabs from "@/src/components/NavigationTabs";
 
 export default function Home() {
   return (
@@ -24,6 +25,8 @@ export default function Home() {
           <CoverImage />
 
           <Profile />
+
+          <NavigationTabs />
 
         </div>
 
