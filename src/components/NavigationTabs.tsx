@@ -12,22 +12,47 @@ export default function NavigationTabs() {
   ];
 
   return (
-    <div className="mt-10 flex justify-center gap-4">
+    <section className="mt-10">
 
-      {tabs.map((tab) => (
-        <button
-          key={tab}
-          onClick={() => setActiveTab(tab)}
-          className={`rounded-full border px-8 py-3 text-lg transition ${
-            activeTab === tab
-              ? "border-zinc-500 bg-zinc-800 text-white"
-              : "border-zinc-700 text-zinc-400 hover:text-white"
-          }`}
-        >
-          {tab}
-        </button>
-      ))}
+      {/* Main Tabs */}
+      <div className="flex justify-center gap-4">
+        {tabs.map((tab) => (
+          <button
+            key={tab}
+            onClick={() => setActiveTab(tab)}
+            className="rounded-full border border-zinc-700 px-8 py-3 text-white"
+          >
+            {tab}
+          </button>
+        ))}
+      </div>
 
-    </div>
+
+      {/* Show only when Projects clicked */}
+      {activeTab === "Projects" && (
+        <div className="mt-8">
+
+          {/* Project categories */}
+          <div className="flex justify-center gap-3">
+            <button className="rounded-lg bg-blue-600 px-6 py-2 text-white">
+              Web2
+            </button>
+
+            <button className="rounded-lg border border-zinc-700 px-6 py-2 text-white">
+              Web3
+            </button>
+
+            <button className="rounded-lg border border-zinc-700 px-6 py-2 text-white">
+              AI
+            </button>
+          </div>
+
+
+          {/* Projects will come here */}
+
+        </div>
+      )}
+
+    </section>
   );
 }
