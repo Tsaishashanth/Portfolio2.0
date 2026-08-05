@@ -2,6 +2,7 @@
 import Profile from "@/src/components/Profile";
 import NavigationTabs from "@/src/components/NavigationTabs";
 import TechStack from "@/src/components/TechStack";
+import ProjectsSection from "@/src/components/secondsection";
 
 export default function Home() {
   return (
@@ -29,11 +30,12 @@ export default function Home() {
 
           <TechStack />
 
-          <NavigationTabs />
 
          
 
         </div>
+
+        <ProjectsSection />
 
       </div>
 

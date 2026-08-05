@@ -20,6 +20,11 @@ export default function TechStack() {
   return (
     <section className="mt-10 px-8">
 
+      <h2 className="mb-5 text-xl font-semibold text-white">
+        Tech Stack
+      </h2>
+
+
       <div className="flex flex-wrap gap-3">
 
         {technologies.map((tech) => (
