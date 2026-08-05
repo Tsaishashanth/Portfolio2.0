@@ -5,6 +5,7 @@ import TechStack from "@/src/components/TechStack";
 import ProjectsSection from "@/src/components/secondsection";
 import GithubContributions from "@/src/components/GithubContributions";
 import Footer from "@/src/components/Footer";
+import ProjectCard from "@/src/components/ProjectCard";
 
 export default function Home() {
   return (
@@ -38,6 +39,7 @@ export default function Home() {
         </div>
 
         <ProjectsSection />
+
 
         <GithubContributions />
 
