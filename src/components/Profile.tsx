@@ -1,19 +1,11 @@
 export default function ProfileSection() {
-  const skills = [
-    "TypeScript",
-    "JavaScript",
-    "Golang",
-    "Rust",
-    "Next.js",
-    "React.js",
-  ];
-
   return (
     <section className="px-8 pt-8">
 
-      <div className="flex items-center gap-6">
+      {/* Top Profile */}
+      <div className="flex items-start gap-6">
 
-        <div className="h-32 w-32 overflow-hidden rounded-xl bg-zinc-800">
+        <div className="h-36 w-36 overflow-hidden rounded-2xl border border-zinc-700">
           <img
             src="/profile.png"
             alt="profile"
@@ -23,47 +15,99 @@ export default function ProfileSection() {
 
 
         <div>
-          <h1 className="flex items-center gap-2 text-3xl font-bold text-white">
+
+          <h1 className="flex items-center gap-2 text-4xl font-bold text-white">
             Tarigopula Sai Shashanth
-            <span className="text-blue-500">✓</span>
+
+            <span className="text-blue-500">
+              ✓
+            </span>
           </h1>
 
-          <p className="mt-2 text-xl text-zinc-400">
+
+          <p className="mt-2 text-2xl text-zinc-400">
             Software Engineer
           </p>
 
-          <p className="mt-3 text-lg text-zinc-300">
-            Developer shipping at speed
+
+          <p className="mt-4 text-zinc-400">
+            ◉ 1.7K
           </p>
+
+
         </div>
 
       </div>
 
 
-      <div className="mt-8 flex gap-4">
+      {/* Bio */}
+      <div className="mt-10 text-lg text-zinc-300">
 
-        <button className="rounded-lg bg-blue-600 px-8 py-3 text-white">
-          Resume
+        <p className="text-xl text-white">
+          Engineer / Builder. I write code that actually ships.
+        </p>
+
+
+        <ul className="mt-5 space-y-3 text-zinc-400">
+
+          <li>
+            • Building scalable web applications and developer tools.
+          </li>
+
+          <li>
+            • Currently working on open source projects.
+          </li>
+
+          <li>
+            • Exploring systems programming and AI.
+          </li>
+
+        </ul>
+
+      </div>
+
+
+      {/* Buttons */}
+      <div className="mt-8 flex gap-3">
+
+        <button className="rounded-xl bg-white px-6 py-3 text-black">
+          Book an intro call
         </button>
 
-        <button className="rounded-lg border border-zinc-700 px-8 py-3 text-white">
-          Send email
+
+        <button className="rounded-xl border border-zinc-700 px-6 py-3 text-white">
+          Send an email
         </button>
 
       </div>
 
 
-      {/* Skills */}
-      <div className="mt-10 grid grid-cols-3 gap-4">
+      {/* Socials */}
+      <div className="mt-8">
 
-        {skills.map((skill) => (
-          <div
-            key={skill}
-            className="rounded-xl border border-zinc-700 bg-zinc-900 px-5 py-3 text-center text-white"
-          >
-            {skill}
-          </div>
-        ))}
+        <p className="text-lg text-white">
+          Here are my <span className="font-semibold">socials</span> and <span className="font-semibold">resume</span>
+        </p>
+
+
+        <div className="mt-4 flex flex-wrap gap-3">
+
+          {[
+            "GitHub",
+            "LinkedIn",
+            "Twitter",
+            "Resume",
+            "More",
+          ].map((item) => (
+            <button
+              key={item}
+              className="rounded-xl bg-zinc-900 px-5 py-3 text-zinc-300 border border-zinc-800"
+            >
+              {item}
+            </button>
+          ))}
+
+        </div>
 
       </div>
 
