@@ -57,13 +57,13 @@ export default function SecondSection() {
 
             <button
               className="
-                rounded-xl
-                border border-blue-400/40
-                bg-gradient-to-b from-blue-500 to-blue-700
+                rounded-full
+                border border-zinc-600
+                bg-gradient-to-b from-zinc-700 to-zinc-900
                 px-6
                 py-2
                 text-white
-                shadow-[0_0_25px_rgba(59,130,246,0.35)]
+                //shadow-[0_0_25px_rgba(59,130,246,0.35)]
                 transition
                 hover:scale-105
               "
@@ -74,7 +74,7 @@ export default function SecondSection() {
 
             <button
               className="
-                rounded-xl
+                rounded-full
                 border border-zinc-600
                 bg-gradient-to-b from-zinc-700 to-zinc-900
                 px-6
@@ -90,7 +90,7 @@ export default function SecondSection() {
 
             <button
               className="
-                rounded-xl
+                rounded-full
                 border border-zinc-600
                 bg-gradient-to-b from-zinc-700 to-zinc-900
                 px-6
