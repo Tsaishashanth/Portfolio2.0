@@ -19,9 +19,18 @@ export default function ProfileSection() {
           <h1 className="flex items-center gap-2 text-4xl font-bold text-white">
             Tarigopula Sai Shashanth
 
-            <span className="text-blue-500">
-              ✓
-            </span>
+<span className="inline-block text-[#1D9BF0]">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    className="w-6 h-6"
+  >
+    <path d="M22 12c0 5.5-4.5 10-10 10S2 17.5 2 12 6.5 2 12 2s10 4.5 10 10zm-11.4 4.3 6.7-6.7-1.4-1.4-5.3 5.3-2.3-2.3-1.4 1.4 3.7 3.7z" />
+  </svg>
+</span>
+
+
           </h1>
 
 
