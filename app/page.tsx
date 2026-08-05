@@ -1,6 +1,7 @@
 ﻿import CoverImage from "@/src/components/CoverImage";
 import Profile from "@/src/components/Profile";
 import NavigationTabs from "@/src/components/NavigationTabs";
+import TechStack from "@/src/components/TechStack";
 
 export default function Home() {
   return (
@@ -26,7 +27,11 @@ export default function Home() {
 
           <Profile />
 
+          <TechStack />
+
           <NavigationTabs />
+
+         
 
         </div>
 
