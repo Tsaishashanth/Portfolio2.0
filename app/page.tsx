@@ -1,8 +1,9 @@
 ﻿import CoverImage from "@/src/components/CoverImage";
 import Profile from "@/src/components/Profile";
-import NavigationTabs from "@/src/components/NavigationTabs";
+//import NavigationTabs from "@/src/components/NavigationTabs";
 import TechStack from "@/src/components/TechStack";
 import ProjectsSection from "@/src/components/secondsection";
+import GithubContributions from "@/src/components/GithubContributions";
 
 export default function Home() {
   return (
@@ -36,6 +37,8 @@ export default function Home() {
         </div>
 
         <ProjectsSection />
+
+        <GithubContributions />
 
       </div>
 
