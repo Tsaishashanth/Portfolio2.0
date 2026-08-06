@@ -13,29 +13,29 @@ export default function SecondSection() {
     Web2: [
       {
         title: "PathForge",
-        description: "Track goals and developer progress.",
+        description: "Track goals and developer progress with a clean modern dashboard.",
         image: "/projects/pathforge.png",
         github: "#",
         demo: "#",
       },
       {
         title: "WriteFlow",
-        description: "AI writing assistant for developers.",
+        description: "AI powered writing assistant for developers and creators.",
         image: "/projects/writeflow.png",
         github: "#",
         demo: "#",
       },
       {
-        title: "LumaBoard",
-        description: "Modern productivity dashboard.",
-        image: "/projects/lumaboard.png",
+        title: "Portfolio",
+        description: "Modern portfolio built using Next.js and Tailwind CSS.",
+        image: "/projects/portfolio.png",
         github: "#",
         demo: "#",
       },
       {
-        title: "Portfolio",
-        description: "Personal developer portfolio.",
-        image: "/projects/portfolio.png",
+        title: "LumaBoard",
+        description: "A productivity dashboard with goals and notes.",
+        image: "/projects/lumaboard.png",
         github: "#",
         demo: "#",
       },
@@ -49,27 +49,13 @@ export default function SecondSection() {
         github: "#",
         demo: "#",
       },
-      {
-        title: "Wallet Tracker",
-        description: "Track wallet analytics.",
-        image: "/projects/wallet.png",
-        github: "#",
-        demo: "#",
-      },
     ],
 
     AI: [
       {
         title: "AI Resume",
-        description: "Generate resumes using AI.",
+        description: "Resume generator powered by AI.",
         image: "/projects/ai.png",
-        github: "#",
-        demo: "#",
-      },
-      {
-        title: "Code Assistant",
-        description: "Developer AI assistant.",
-        image: "/projects/code.png",
         github: "#",
         demo: "#",
       },
@@ -77,17 +63,31 @@ export default function SecondSection() {
   };
 
   return (
-    <section className="mt-8 rounded-3xl border border-zinc-800 bg-[#111111]/80 p-8 backdrop-blur-xl">
+    <section
+      className="
+        mt-8
+        rounded-3xl
+        border
+        border-zinc-800
+        bg-[#111111]/80
+        p-6
+        backdrop-blur-xl
+        transition-all
+        duration-500
+        hover:border-zinc-700
+        hover:shadow-[0_0_40px_rgba(255,255,255,0.05)]
+      "
+    >
       {/* Main Tabs */}
-      <div className="flex justify-center gap-4">
+      <div className="flex justify-center gap-3">
         {tabs.map((tab) => (
           <button
             key={tab}
             onClick={() => setActiveTab(tab)}
-            className={`rounded-full border px-8 py-3 text-white transition-all duration-300 ${
+            className={`rounded-full border px-6 py-2.5 text-sm font-medium transition-all duration-300 ${
               activeTab === tab
-                ? "border-zinc-400 bg-gradient-to-b from-zinc-700 to-zinc-900 shadow-[0_0_20px_rgba(255,255,255,0.15)]"
-                : "border-zinc-700 bg-zinc-900/50 hover:bg-zinc-800"
+                ? "border-zinc-500 bg-zinc-800 text-white"
+                : "border-zinc-700 bg-zinc-900/40 text-zinc-400 hover:bg-zinc-800 hover:text-white"
             }`}
           >
             {tab}
@@ -95,16 +95,15 @@ export default function SecondSection() {
         ))}
       </div>
 
-      {/* Projects */}
       {activeTab === "Projects" && (
         <>
-          {/* Category Buttons */}
-          <div className="mt-10 flex justify-center gap-4">
+          {/* Category */}
+          <div className="mt-8 flex justify-center gap-3">
             {["Web2", "Web3", "AI"].map((category) => (
               <button
                 key={category}
                 onClick={() => setActiveCategory(category)}
-                className={`rounded-xl px-6 py-2 transition ${
+                className={`rounded-lg px-5 py-2 text-sm font-medium transition-all duration-300 ${
                   activeCategory === category
                     ? "bg-blue-600 text-white"
                     : "bg-zinc-800 text-zinc-300 hover:bg-zinc-700"
@@ -115,8 +114,8 @@ export default function SecondSection() {
             ))}
           </div>
 
-          {/* Project Cards */}
-          <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2">
+          {/* Cards */}
+          <div className="mt-8 grid grid-cols-1 gap-5 lg:grid-cols-2">
             {projects[activeCategory as keyof typeof projects].map(
               (project) => (
                 <ProjectCard
@@ -134,17 +133,15 @@ export default function SecondSection() {
         </>
       )}
 
-      {/* Open Source */}
       {activeTab === "Open Source" && (
-        <div className="mt-10 text-center text-zinc-400">
-          Open Source projects will appear here.
+        <div className="mt-10 rounded-2xl border border-dashed border-zinc-700 p-12 text-center text-zinc-500">
+          Open Source projects coming soon.
         </div>
       )}
 
-      {/* Blogs */}
       {activeTab === "Blogs" && (
-        <div className="mt-10 text-center text-zinc-400">
-          Blogs will appear here.
+        <div className="mt-10 rounded-2xl border border-dashed border-zinc-700 p-12 text-center text-zinc-500">
+          Blogs coming soon.
         </div>
       )}
     </section>
