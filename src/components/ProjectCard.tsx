@@ -3,9 +3,9 @@ type ProjectCardProps = {
   description: string;
   image: string;
   category: string;
-  live?: boolean;
   github: string;
   demo: string;
+  tech: string[];
 };
 
 export default function ProjectCard({
@@ -13,71 +13,86 @@ export default function ProjectCard({
   description,
   image,
   category,
-  live = true,
   github,
   demo,
+  tech,
 }: ProjectCardProps) {
   return (
-    <div className="group rounded-2xl border border-zinc-800 bg-[#181818] p-3 transition-all duration-300 hover:-translate-y-1 hover:border-zinc-600 hover:shadow-[0_0_30px_rgba(255,255,255,0.05)]">
+    <div className="group overflow-hidden rounded-3xl border border-zinc-800 bg-[#181818] transition-all duration-300 hover:-translate-y-1 hover:border-zinc-600 hover:shadow-[0_0_30px_rgba(255,255,255,0.06)]">
 
       {/* Project Image */}
-      <div className="relative overflow-hidden rounded-xl">
-
+      <div className="relative overflow-hidden">
         <img
           src={image}
           alt={title}
-          className="h-52 w-full rounded-xl object-cover transition duration-500 group-hover:scale-105"
+          className="h-56 w-full object-cover transition duration-500 group-hover:scale-105"
         />
 
-        <span className="absolute left-3 top-3 rounded-full bg-black/60 px-3 py-1 text-xs font-medium text-white backdrop-blur-md">
-          {category}
-        </span>
-
+        <div className="absolute inset-0 bg-gradient-to-t from-[#181818] via-transparent to-transparent" />
       </div>
 
       {/* Content */}
-      <div className="mt-4">
+      <div className="p-5">
 
+        {/* Category + Live */}
         <div className="flex items-center justify-between">
 
-          <h3 className="text-xl font-semibold text-white">
-            {title}
-          </h3>
+          <span className="rounded-full border border-zinc-700 bg-zinc-800 px-3 py-1 text-xs text-zinc-300">
+            {category}
+          </span>
 
-          {live && (
-            <div className="flex items-center gap-2">
-
-              <span className="h-2 w-2 rounded-full bg-emerald-400" />
-
-              <span className="text-xs text-emerald-400">
-                Live
-              </span>
-
-            </div>
-          )}
+          <div className="flex items-center gap-2">
+            <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
+            <span className="text-xs text-emerald-400">
+              Live
+            </span>
+          </div>
 
         </div>
 
+        {/* Title */}
+        <h3 className="mt-4 text-2xl font-bold text-white">
+          {title}
+        </h3>
+
+        {/* Description */}
         <p className="mt-3 text-sm leading-6 text-zinc-400">
           {description}
         </p>
 
-        <div className="mt-5 flex items-center justify-between">
+        {/* Tech Stack */}
+        <div className="mt-5 flex flex-wrap gap-2">
 
-          <a
-            href={demo}
-            target="_blank"
-            className="text-sm font-medium text-white transition group-hover:translate-x-1"
-          >
-            View Project →
-          </a>
+          {tech.map((item) => (
+            <span
+              key={item}
+              className="rounded-lg bg-zinc-800 px-3 py-1 text-xs text-zinc-300"
+            >
+              {item}
+            </span>
+          ))}
+
+        </div>
+
+        {/* Footer */}
+        <div className="mt-6 flex items-center justify-between border-t border-zinc-800 pt-5">
 
           <a
             href={github}
             target="_blank"
-            className="text-sm text-zinc-500 transition hover:text-white"
+            rel="noopener noreferrer"
+            className="rounded-xl border border-zinc-700 px-4 py-2 text-sm text-zinc-300 transition hover:border-zinc-500 hover:text-white"
           >
             GitHub
+          </a>
+
+          <a
+            href={demo}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm font-medium text-white transition hover:translate-x-1"
+          >
+            View Project →
           </a>
 
         </div>
