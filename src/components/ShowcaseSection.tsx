@@ -2,8 +2,8 @@
 
 import { useState } from "react";
 import ProjectCard from "./ProjectCard";
-//import OpenSourceCard from "./OpenSourceCard";
-//import BlogCard from "./BlogCard";
+import OpenSourceCard from "./OpenSourceCard";
+import BlogCard from "./BlogCard";
 
 export default function ShowcaseSection() {
   const [activeTab, setActiveTab] = useState("Projects");
