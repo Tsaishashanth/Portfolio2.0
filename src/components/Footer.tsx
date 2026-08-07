@@ -8,10 +8,10 @@ export default function Footer() {
 
         {/* Background Image */}
         <Image
-          src="/himalaya footer.png"
+          src="/himalaya footer1.png"
           alt=""
           fill
-          className="object-cover"
+          className="object-cover "
         />
 
         {/* Overlay */}
