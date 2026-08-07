@@ -1,6 +1,28 @@
+"use client";
+
+import { AnimatePresence, motion } from "framer-motion";
+import { useEffect, useState } from "react";
 import { bricolage } from "@/app/layout";
 
+
+
 export default function ProfileSection() {
+    const roles = [
+    "Software Engineer",
+    "Solana Builder",
+    "Backend Engineer",
+    "DevOps Engineer",
+  ];
+
+  const [roleIndex, setRoleIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setRoleIndex((prev) => (prev + 1) % roles.length);
+    }, 2500);
+
+    return () => clearInterval(interval);
+  }, []);
   return (
     <section className="px-8 pt-8">
 
@@ -34,9 +56,21 @@ export default function ProfileSection() {
           </h1>
 
           {/* Role */}
-          <p className="mt-2 text-lg text-zinc-400">
-            Software Engineer.
-          </p>
+{/* Role */}
+<div className="mt-1 h-7 overflow-hidden">
+  <AnimatePresence mode="wait">
+    <motion.p
+      key={roles[roleIndex]}
+      initial={{ y: 20, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      exit={{ y: -20, opacity: 0 }}
+      transition={{ duration: 0.35 }}
+      className="text-lg text-zinc-400"
+    >
+      {roles[roleIndex]}
+    </motion.p>
+  </AnimatePresence>
+</div>
 
         
           <p className="mt-3 text-sm text-zinc-500">

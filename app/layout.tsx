@@ -18,10 +18,10 @@ export const bricolage = Bricolage_Grotesque({
   weight: ["400", "600"],
 });
 
-export const metadata: Metadata = {
-  title: "Tarigopula Sai Shashanth",
-  description: "Full Stack Developer Portfolio",
-};
+// export const metadata: Metadata = {
+//   title: "Tarigopula Sai Shashanth",
+//   description: "Full Stack Developer Portfolio",
+// };
 
 export default function RootLayout({
   children,
