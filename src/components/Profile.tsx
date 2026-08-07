@@ -1,3 +1,5 @@
+import { bricolage } from "@/app/layout";
+
 export default function ProfileSection() {
   return (
     <section className="px-8 pt-8">
@@ -16,7 +18,7 @@ export default function ProfileSection() {
         <div>
 
           {/* Name */}
-          <h1 className="flex items-center gap-2 font-bricolage text-3xl font-semibold text-white md:text-4xl">
+          <h1 className={`${bricolage.className} flex items-center gap-2 text-3xl font-semibold text-white md:text-4xl`}>
             Tarigopula Sai Shashanth
 
             <span className="inline-block text-[#1D9BF0]">
