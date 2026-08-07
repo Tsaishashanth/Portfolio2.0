@@ -33,13 +33,10 @@ export default function ProfileSection() {
 
           {/* Role */}
           <p className="mt-2 text-lg text-zinc-400">
-            Self taught programmer.
+            Software Engineer.
           </p>
 
-          <p className="mt-2 text-lg text-zinc-300">
-            Developer shipping at speed.
-          </p>
-
+        
           <p className="mt-3 text-sm text-zinc-500">
             ◉ 1.7K
           </p>
@@ -53,7 +50,7 @@ export default function ProfileSection() {
       <div className="mt-7 text-sm text-zinc-300">
 
         <p className="text-base text-white">
-          I build software that actually ships.
+          Developer shipping at ⚡speed
         </p>
 
         <ul className="mt-3 space-y-2 text-zinc-400">
