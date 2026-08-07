@@ -4,7 +4,7 @@ export default function CoverImage() {
   return (
     <div className="h-64 w-full overflow-hidden">
       <Image
-        src="/header mountain for portfolio.png"
+        src="/header mountain for portfolio1.png"
         alt="Portfolio cover header"
         width={1200}
         height={400}
