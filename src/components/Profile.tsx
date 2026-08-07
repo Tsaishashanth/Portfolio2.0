@@ -9,7 +9,7 @@ export default function ProfileSection() {
 
         <div className="h-32 w-32 overflow-hidden rounded-2xl border border-zinc-700">
           <img
-            src="/profile.png"
+            src="/minecraftportfolio.png"
             alt="profile"
             className="h-full w-full object-cover"
           />
